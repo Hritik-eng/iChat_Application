@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iChat app</title>
+   
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="chat__section">
+        <div class="brand">
+            <div>
+            <img class="img" width="45vw" src="/wassup.png" alt="">
+        </div>
+        <div class="username"><h2>{{username}}</h2></div>
+        <div>
+            <h2><a href="/log_out">Log out</a></h2>
+        </div>
+        </div>
+        <div class="message__area">
+        </div>
+        <div class="text">
+            <textarea id="textarea" cols="1" name={{username}} placeholder="Write a message..."></textarea> 
+            <img src="send.png" id="send"/>
+        </div>
+    </section>
+    <script  src="/socket.io/socket.io.js"></script>
+    <script   src="/client.js"></script>
+</body>
+</html>
