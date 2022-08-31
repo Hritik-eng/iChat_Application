@@ -7,7 +7,7 @@ require("./src/db/conn.js");
 const Register = require("./src/model/Schema");
 const path = require("path")
 const PORT = process.env.PORT || 1000
-
+// require("./sign.js")
 
 app.use(bp.urlencoded({extended:false}));
 app.use(bp.json())
@@ -33,6 +33,11 @@ app.get('/sign_up', (req, res) => {
 
 app.post('/sign_up', async(req, res) => {
     try{
+        data = await Register.find({"email":req.body.email});
+        if(req.body.email === data[0].email){
+            res.status(400).send("This email id already exist. Mean you do not have to need sign up from this email id. It has been already signed up from this email id.");
+        }
+
         if(req.body.password === req.body.confirmpassword){
             const addingData = await Register({
                firstname: req.body.fname,
@@ -65,11 +70,11 @@ app.post('/log_in', async(req, res) => {
             // Succesfully login
         }
         else{
-            res.status(400).send("Login failed ...fill the correct email or password or if you have not signed up yet then first you have to sign up" );
+            res.status(400).send("Login failed ...fill the correct email or password or if you have not signed up yet then first you have to sign up." );
         }
      
     }catch(error){
-        res.status(400).send(error);
+        res.status(400).send("This email id does not exist. Please Sign up first then do log in.");
     }
 
     
