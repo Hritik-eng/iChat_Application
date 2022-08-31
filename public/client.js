@@ -12,22 +12,49 @@ let send = document.querySelector("#send")
 //     socket.emit("new-user",name)
 // } while(!name)
 let u;
+let n;
 socket.emit("new-user")
 socket.on("user",(name)=>{
     u = name;
     alert(name+" is joinig the chat")
 })
+
+
+textarea.addEventListener('click', (e) => {
+        n = e.target.name
+})
+
+textarea.addEventListener('touchstart', (e) => {
+        n = e.target.name
+})
+
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
-        let n = e.target.name
+        n = e.target.name
         sendMessage(e.target.value,n)
     }
 })
 
 send.addEventListener("click",()=>{
+   
     if(textarea.value == ""){
+       
     }
     else{
+    
+    sendMessage(textarea.value,n)
+    }
+})
+
+
+// for device like mobile phones
+send.addEventListener("touchend",()=>{
+   
+    if(textarea.value == ""){
+       
+    }
+    else{
+    
     sendMessage(textarea.value,n)
     }
 })
