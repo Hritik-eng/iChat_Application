@@ -33,10 +33,10 @@ app.get('/sign_up', (req, res) => {
 
 app.post('/sign_up', async(req, res) => {
     try{
-        data = await Register.find({"email":req.body.email});
-        if(req.body.email === data[0].email){
-            res.status(400).send("This email id already exist. Mean you do not have to need sign up from this email id. It has been already signed up from this email id.");
-        }
+        // Data = await Register.find({"email":req.body.email});
+        // if(req.body.email === Data[0].email){
+        //     res.status(400).send("This email id already exist. Means you do not have to need sign up from this email id. It has been already signed up from this email id.");
+        // }
 
         if(req.body.password === req.body.confirmpassword){
             const addingData = await Register({
@@ -51,10 +51,10 @@ app.post('/sign_up', async(req, res) => {
             res.status(200).sendFile(__dirname+"/navbar.html");
         }
         else{
-            res.status(400).send("Password does not match");
+            res.status(400).send("Password does not match. Try again...");
         }
     }catch(e){
-        res.status(400).send(e);
+        res.status(400).send("Something went wrong.");
     }
 })
 app.get('/log_in', (req, res) => {
