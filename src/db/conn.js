@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect(MONGODB_ATALAS_URL)
+  .connect("mongodb+srv://HriTech:Mongodb123@cluster0.pluvvyc.mongodb.net/iChat")
   .then(() => {
     console.log("Successfully connected");
   })
