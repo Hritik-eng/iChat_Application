@@ -4,13 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "echo \"No build specified\" && exit 1",
-    "test": "echo \"No test specified\" && exit 1",
-      "start": "node server.js"
+    "test": "echo \"No test specified\" && exit 1"
   },
    "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hritik-eng/iChat_Application"
+    "url": "git+https://github.com/Hritik-eng/iChat_Application.git"
   },
   "keywords": [],
   "author": "",
