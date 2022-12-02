@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Hritik-eng/iChat_Application.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hritik Gupta",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
