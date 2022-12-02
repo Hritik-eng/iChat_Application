@@ -8,6 +8,10 @@
     "test": "echo \"No test specified\" && exit 1",
       "start": "node server.js"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hritik-eng/iChat_Application"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
